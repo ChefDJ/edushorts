@@ -5,7 +5,6 @@ import Home from "./pages/Home"
 import Settings from "./pages/Settings"
 import { getUserSettings } from "./utils/settings"
 
-
 function App() {
   useEffect(() => {
     const settings = getUserSettings()
