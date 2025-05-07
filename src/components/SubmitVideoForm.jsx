@@ -12,7 +12,7 @@ export default function SubmitVideoForm() {
       }}
     >
       <label>
-        Your Name:
+        Your E-mail address:
         <input type="text" name="name" required />
       </label>
 
