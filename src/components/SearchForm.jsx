@@ -61,7 +61,7 @@ export default function SearchForm({ onSearch,onDelete }) {
             cursor: 'pointer',
           }}
         >
-          🔎 Clear
+          🔙 Clear
         </button>}</div>
       </form>
     )
