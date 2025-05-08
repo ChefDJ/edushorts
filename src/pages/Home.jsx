@@ -1,3 +1,4 @@
+// react import components and modules 
 import { getUserSettings } from "../utils/settings"
 import { useEffect, useState } from "react"
 import { fetchPlaylistVideos } from "../api/youtube"
@@ -6,20 +7,28 @@ import SearchForm from "../components/SearchForm"
 import VideoModal from "../components/VideoModal"
 import { Link } from "react-router-dom"
 
-
+// react component 
 export default function Home() {
+  //arrays for State management
   const settings = getUserSettings()
+  // state hooks 
   const [videos, setVideos] = useState([])
   const [filteredVideos, setFilteredVideos] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedVideoId, setSelectedVideoId] = useState(null)
 
+  function clearSearch(e)
+ {
+  e.preventDefault();
+  setFilteredVideos(videos)
+ }
   useEffect(() => {
     async function loadVideos() {
       setLoading(true)
       try {
-        const data = await fetchPlaylistVideos()
         const max = settings.maxVideos || 10
+        // function to access API 
+        const data = await fetchPlaylistVideos(max)
         setVideos(data.slice(0, max))
         setFilteredVideos(data.slice(0, max))
       } catch (err) {
@@ -41,8 +50,8 @@ export default function Home() {
           <h1>"15 Minutes of Fame"</h1>
           <h2>15 minutes or less Short Films</h2>
           <h3>EduShorts - Video Site. Film Student's Video Archive!</h3>
-          <SearchForm onSearch={handleSearch} />
-        
+          <SearchForm onDelete={clearSearch} onSearch={handleSearch} />
+   {/* jsx syntax       */}
 <Link
   to="/submit"
   style={{

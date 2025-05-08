@@ -1,8 +1,9 @@
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const PLAYLIST_ID = 'PLNSx3wqy4NxC2EQb_NlcsNyHQNbLF85Jc';
-const MAX_RESULTS = 20
+// const MAX_RESULTS = 
 
-export async function fetchPlaylistVideos() {
+export async function fetchPlaylistVideos(MAX_RESULTS) {
+  // function to access youtube API 
   const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${MAX_RESULTS}&playlistId=${PLAYLIST_ID}&key=${API_KEY}`
 
   try {

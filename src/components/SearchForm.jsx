@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function SearchForm({ onSearch }) {
+export default function SearchForm({ onSearch,onDelete }) {
     const [query, setQuery] = useState("")
   
     const handleSubmit = (e) => {
@@ -9,6 +9,7 @@ export default function SearchForm({ onSearch }) {
     }
   
     return (
+      // form element 
       <form
         onSubmit={handleSubmit}
         style={{
@@ -19,9 +20,11 @@ export default function SearchForm({ onSearch }) {
           marginTop: '1rem',
         }}
       >
+        {/* input for user's query  */}
         <input
-          type="text"
+          type="search"
           value={query}
+          // event to handle user's query 
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search videos...🎭"
           style={{
@@ -31,6 +34,7 @@ export default function SearchForm({ onSearch }) {
             border: '1px solid #ccc',
           }}
         />
+        <div style={{display: "flex", alignItems: "center", gap: "10px"}}> 
         <button
           type="submit"
           style={{
@@ -44,6 +48,21 @@ export default function SearchForm({ onSearch }) {
         >
           🔎 Search
         </button>
+        { query.length > 0 &&<button
+          type="button"
+
+          onClick={(e)=>(setQuery(""), onDelete(e))}
+          style={{
+            padding: '0.5rem 1rem',
+            backgroundColor: '#007BFF',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+        >
+          🔎 Clear
+        </button>}</div>
       </form>
     )
   }

@@ -12,7 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body {
+  min-height: 100vh !important;
+}
 a {
   font-weight: 500;
   color: #646cff;

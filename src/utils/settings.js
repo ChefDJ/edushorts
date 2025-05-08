@@ -3,7 +3,7 @@ export const defaultSettings = {
     maxVideos: 10,
     autoplay: true,
   }
-  
+  // function to access local storage 
   export function getUserSettings() {
     const stored = localStorage.getItem("userSettings")
     return stored ? { ...defaultSettings, ...JSON.parse(stored) } : defaultSettings

@@ -6,12 +6,14 @@ import Settings from "./pages/Settings"
 import { getUserSettings } from "./utils/settings"
 
 function App() {
+  // react useEffect hook 
   useEffect(() => {
     const settings = getUserSettings()
     document.body.classList.toggle("dark", settings.theme === "dark")
   }, [])
   
   return (
+    // react routes to define the main pages
     <Router>
       <Routes>
         <Route index element={<Home />} />
