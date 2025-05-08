@@ -47,9 +47,9 @@ export default function Home() {
 
   return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
-          <h1>"Your 15 
-            Minutes 
-            of Fame"</h1>
+          <h1>"Your 15</h1> 
+            <h1>Minutes</h1> 
+            <h1>of Fame"</h1>
           <h2>15 minutes or less Short Films</h2>
           <h3>EduShorts - Video Site. Film Student's Video Archive!</h3>
           <SearchForm onDelete={clearSearch} onSearch={handleSearch} />
