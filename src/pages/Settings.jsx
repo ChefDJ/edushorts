@@ -33,8 +33,8 @@ export default function Settings() {
   
 
   return (
-    <div style={{ maxWidth: "600px",paddingTop: "40px", margin: "2rem auto" }}>
-      <h2 style={{fontSize: "30px"}}>Settings</h2>
+    <div style={{ maxWidth: "350px",paddingTop: "60px", margin: "6rem auto" }}>
+      <h2 style={{fontSize: "100px"}}>Settings</h2>
 
       <form onSubmit={(e) => { e.preventDefault(); handleSave() }}>
         {/* Theme */}
