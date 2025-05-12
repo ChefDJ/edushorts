@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
-          <h1>"Your 15 Minutes of Fame"</h1>
+          <h1 className="entry-title">"Your 15 Minutes of Fame"</h1>
           <h2>15 minutes or less Short Films</h2>
           <h3>EduShorts - Video Site. Film Student's Video Archive!</h3>
           <SearchForm onDelete={clearSearch} onSearch={handleSearch} />
@@ -81,7 +81,7 @@ export default function Home() {
 </Link>
 
       {loading ? <p>Loading...</p> : (
-        <div style={{ display: "grid", width:"100%", marginTop: "20px", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1rem" }}>
+        <div style={{ display: "grid", width:"100%", maxWidth: "1200px", margin: "20px auto 0 auto", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1rem" }}>
           {filteredVideos.map(video => (
             <VideoCard key={video.id} video={video} onClick={setSelectedVideoId} />
           ))}
